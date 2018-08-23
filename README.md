@@ -1,5 +1,5 @@
 
-This is a RESTful API build on PHP framework `Phalcon 3.4.0`. 
+This is a MVC designed RESTful API build on PHP framework `Phalcon 3.4.0`. 
 
 It simulates stock management of an online store. 
 A store manager can *add*, *search for*, *update* and *delete* products data and avatars using this API.
@@ -39,6 +39,4 @@ CREATE TABLE `products` (
 |検索 <br />(search for product with its id)         |GET          |/api/products/search/{id:[0-9]+}|curl -i -X GET http://localhost/exercise-01-rest-api-mvc/api/products/search/1|`id` should be an integer|
 |変更 <br />(update product data based on its id)    |PUT          |/api/products/{id:[0-9]+}|curl -i -X PUT -d '{"name":"iphone 8"}' http://localhost/exercise-01-rest-api-mvc/api/products/1||
 |削除 <br />(delete product based on its id)         |DELETE       |/api/products/{id:[0-9]+}|curl -i -X DELETE http://localhost/exercise-01-rest-api-mvc/api/products/1||
-
-Other `curl` commands and sample images could be found in `materials/shell-command.txt`.
 
