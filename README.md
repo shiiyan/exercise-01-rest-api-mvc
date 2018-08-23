@@ -1,5 +1,5 @@
 
-This is a MVC designed RESTful API build on PHP framework `Phalcon 3.4.0`. 
+This is an MVC designed RESTful API build on PHP framework `Phalcon 3.4.0`. 
 
 It simulates stock management of an online store. 
 A store manager can *add*, *search for*, *update* and *delete* products data and avatars using this API.
