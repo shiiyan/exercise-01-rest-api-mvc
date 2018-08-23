@@ -16,7 +16,17 @@ A store manager can *add*, *search for*, *update* and *delete* products data and
   'dbname' => 'myproducts'
 ]
 ```
-3. Create a new table on the database and name it `products`. Sample SQL query can be found in `materials/myproducts.sql`.
+3. Create a new table on the database and name it `products`. 
+```sql
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `detail` varchar(500) COLLATE utf8_bin DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  `image_url` varchar(120) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+```
 4. Start to use this API by sending HTTP request using `curl`.
 
 ## API Overview
