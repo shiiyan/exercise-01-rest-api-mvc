@@ -32,7 +32,7 @@ $di->set(
     'view',
     function () {
         $view = new View();
-        $view->setViewsDir(APP_PATH . '/views/');
+        $view->setViewsDir(APP_PATH.'/views/');
         return $view;
     }
 );
@@ -40,7 +40,7 @@ $di->set(
 $di->set(
     'router',
     function () {
-        require __DIR__.'/../app/config/routes.php';
+        require APP_PATH.'/config/routes.php';
         return $router;
     }
 
@@ -49,7 +49,7 @@ $di->set(
 $di->set(
     'db',
     function () {
-        require __DIR__.'/../app/config/config.php';
+        require APP_PATH.'/config/config.php';
         return $Pdo;
     
     }
