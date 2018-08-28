@@ -40,38 +40,7 @@ $di->set(
 $di->set(
     'router',
     function () {
-        $router = new Router(false);
-        
-        $router->addGet(
-            '/api/products',
-            'Index::getall'
-        );
-
-        $router->addGet(
-            '/api/products/search/{name}',
-            'Index::getbyname'
-        );
-
-        $router->addGet(
-            '/api/products/search/{id:[0-9]+}',
-            'Index::getbyid'
-        );
-
-        $router->addPost(
-            '/api/products',
-            'Index::add'
-        );
-
-        $router->addPut(
-            '/api/products/{id:[0-9]+}',
-            'Index::updatebyid'
-        );
-
-        $router->addDelete(
-            '/api/products/{id:[0-9]+}',
-            'Index::deletebyid'
-        );
-
+        require __DIR__.'/../app/config/routes.php';
         return $router;
     }
 
@@ -80,14 +49,9 @@ $di->set(
 $di->set(
     'db',
     function () {
-        return new PdoMysql(
-            [
-                'host' => 'localhost',
-                'username' => 'root',
-                'password' => '',
-                'dbname' => 'myproducts'
-            ]
-        );
+        require __DIR__.'/../app/config/config.php';
+        return $Pdo;
+    
     }
 );
 
