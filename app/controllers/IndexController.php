@@ -24,7 +24,10 @@ class IndexController extends Controller
     	$name = $this->dispatcher->getParam("name");
     	$products = Products::find(
     		[
-    			'conditions' => "name LIKE '%$name%'"
+    			'conditions' => "name LIKE ?1",
+    			'bind' => [
+    				1 => "%$name%"
+    			]
     		]
     	);
     	if ($products->valid() === false) {
