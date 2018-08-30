@@ -7,7 +7,7 @@ A store manager can *add*, *search for*, *update* and *delete* products data and
 ## Setup and Usage
 1. After setting up MySQL server and Apache server, clone this repo to Apache server's `/htdocs` directory. 
 
-2. Create a new database on MySQL server called, for example, `myproducts` and adjust the DI setting part of `index.php` according to what you have created.
+2. Create a new database on MySQL server called, for example, `myproducts` and change the configure file `config.php` according to what you have created.
 ```
 [
   'host' => 'localhost',
