@@ -32,7 +32,7 @@ $di->set(
     'view',
     function () {
         $view = new View();
-        $view->setViewsDir(APP_PATH . '/views/');
+        $view->setViewsDir(APP_PATH.'/views/');
         return $view;
     }
 );
@@ -40,38 +40,7 @@ $di->set(
 $di->set(
     'router',
     function () {
-        $router = new Router(false);
-        
-        $router->addGet(
-            '/api/products',
-            'Index::getall'
-        );
-
-        $router->addGet(
-            '/api/products/search/{name}',
-            'Index::getbyname'
-        );
-
-        $router->addGet(
-            '/api/products/search/{id:[0-9]+}',
-            'Index::getbyid'
-        );
-
-        $router->addPost(
-            '/api/products',
-            'Index::add'
-        );
-
-        $router->addPut(
-            '/api/products/{id:[0-9]+}',
-            'Index::updatebyid'
-        );
-
-        $router->addDelete(
-            '/api/products/{id:[0-9]+}',
-            'Index::deletebyid'
-        );
-
+        require APP_PATH.'/config/routes.php';
         return $router;
     }
 
@@ -80,14 +49,9 @@ $di->set(
 $di->set(
     'db',
     function () {
-        return new PdoMysql(
-            [
-                'host' => 'localhost',
-                'username' => 'root',
-                'password' => '',
-                'dbname' => 'myproducts'
-            ]
-        );
+        require APP_PATH.'/config/config.php';
+        return $Pdo;
+    
     }
 );
 
